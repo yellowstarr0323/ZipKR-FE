@@ -15,9 +15,3 @@ export default function RecentSearchList() {
 
 
 
-
-
-
-
-
-
