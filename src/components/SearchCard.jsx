@@ -13,16 +13,17 @@ export default function SearchCard() {
 }
 
 const SearchCardWrapper = styled.div`
-  width: 600px;
-  height: 500px;
+  width: 480px;
   border: 1px gray solid;
   box-sizing: border-box;
-  border-radius: 30px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 `
 
 const Line = styled.hr`
-  border: 1px gray solid;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 1px solid gray;
 `
