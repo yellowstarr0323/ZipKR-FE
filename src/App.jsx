@@ -17,10 +17,10 @@ function App() {
 
 const Page = styled.div`
   display: flex;
+  padding: 64px 16px 402.03px 16px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 50vh;
+  align-self: stretch;
 `
 
 export default App
