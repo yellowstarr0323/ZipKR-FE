@@ -17,12 +17,12 @@ const SearchCardWrapper = styled.div`
   height: 500px;
   border: 1px gray solid;
   box-sizing: border-box;
-
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 `
 
 const Line = styled.hr`
-  height: 2px;
+  border: 1px gray solid;
 `

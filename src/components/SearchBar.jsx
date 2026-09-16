@@ -18,11 +18,15 @@ const SearchBarWrapper = styled.div`
   justify-self: center;
   margin: 0 15px;
   margin-top: 15px;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  gap: 10px;
 `
 
 const SearchIcon = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 `
 
 const Input = styled.input`
