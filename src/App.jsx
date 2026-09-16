@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import styled from "styled-components"
 import "./index.css"
 import SearchCard from "./components/SearchCard"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <Page>
       <Header/>
       <SearchCard/>
+      <Footer/>
     </Page>
   )
 }
