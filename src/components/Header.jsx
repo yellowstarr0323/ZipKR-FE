@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   padding-bottom: 20px;
 `
 
@@ -26,6 +26,6 @@ const IntroduceText = styled.h2`
 `
 
 const Logo = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 52px;
+  height: 52px;
 `
