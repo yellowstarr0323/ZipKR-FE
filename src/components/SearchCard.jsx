@@ -23,7 +23,6 @@ const SearchCardWrapper = styled.div`
   gap: 15px;
 `
 
-const Line = sty
-led.hr`
+const Line = styled.hr`
   height: 2px;
 `
