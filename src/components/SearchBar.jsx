@@ -12,18 +12,18 @@ export default function SearchBar() {
 
 const SearchBarWrapper = styled.div`
   display: flex;
-  border: 1px gray solid;
+  border: 1px #DDDDDD solid;
   border-radius: 30px;
   align-items: center;
   margin: 15px;
   height: 45px;
   gap: 10px;
-  padding-left: 15px;
+  padding:12px 15px
 `
 
 const SearchIcon = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 `
 
 const Input = styled.input`
@@ -31,4 +31,5 @@ const Input = styled.input`
   border: none;
   font-size: 15px;
   width: 90%;
+  color: #757575;
 `
