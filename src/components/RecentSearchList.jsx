@@ -1,20 +1,9 @@
 import styled from "styled-components";
-import { useState } from "react";
 import RecentSearchBox from "./RecentSearchBox";
 
 export default function RecentSearchList() {
 
-  const [recentSearchList, setRecentSearchList] = useState([
-    {
-      address: "세종특별자치시 한누리대로 2130",
-      postalCode: "30151"
-    },
-    {
-      address: "서울특별시 강남구 테헤란로 123",
-      postalCode: "06133"
-    }
-  ]);
-
+const recentSearchList = JSON.parse(localStorage.getItem("recentSearchList")) || [];
 
   return (
     <RecentSearchListWrapper>
@@ -24,7 +13,7 @@ export default function RecentSearchList() {
         ? recentSearchList.map((recentSearch) => (
           <RecentSearchBox
             key={recentSearch.postalCode}
-            address={recentSearch.address}
+            address={recentSearch.roadNameAddress}
             postalCode={recentSearch.postalCode}
           />
         ))

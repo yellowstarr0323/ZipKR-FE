@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function SearchBox({ postalCode, roadName, jibunName }) {
+export default function SearchBox({ postalCode, roadName, jibunName, selected }) {
 
   return (
-    <SearchBoxWrapper>
+    <SearchBoxWrapper $selected={selected}>
       <PostalCode>{postalCode}</PostalCode>
 
       <AddressWrapper>
@@ -28,6 +28,9 @@ const SearchBoxWrapper = styled.div`
   align-items: center;
   gap: 14px;
   box-sizing: border-box;
+
+  background-color: ${({ $selected }) =>
+    $selected ? "#eeeeee" : "#ffffff"};
 `
 
 const PostalCode = styled.p`

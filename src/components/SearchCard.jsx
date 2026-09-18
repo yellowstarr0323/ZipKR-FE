@@ -4,10 +4,13 @@ import RecentSearchList from "./RecentSearchList";
 import { useEffect, useState } from "react";
 import SearchResult from "./SearchResult";
 import { searchPostalCode } from "../api/SearchPostalCode";
+import { copyToClipboard } from "../util/CopyPostalCode";
 
 export default function SearchCard() {
+
   const [searchKeyword, setSearchKeyword] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     if (searchKeyword.trim() === "") {
@@ -16,10 +19,10 @@ export default function SearchCard() {
     }
 
     const getSearchResult = async () => {
-      
-      if(searchKeyword==="" || searchKeyword===null){
+
+      if (searchKeyword === "" || searchKeyword === null) {
         setSearchResult(null)
-        return 
+        return
       }
 
       const response = await searchPostalCode({
@@ -27,17 +30,65 @@ export default function SearchCard() {
         page: 0
       });
 
+      setSelectedIndex(0)
       setSearchResult(response.data);
     };
 
     getSearchResult();
   }, [searchKeyword]);
 
+  function handleKeyDown(e) {
+    if (e.key === "ArrowDown") {
+      setSelectedIndex((prev) => {
+        if (prev < searchResult.length - 1) {
+          return prev + 1;
+        }
+
+        return prev;
+      });
+    }
+
+    if (e.key === "ArrowUp") {
+      setSelectedIndex((prev) => {
+        if (prev > 0) {
+          return prev - 1;
+        }
+
+        return prev;
+      });
+    }
+
+    if (e.key === "Enter") {
+      if (selectedIndex === -1) {
+        return;
+      }
+
+      const selectedResult = searchResult[selectedIndex];
+
+      copyToClipboard(selectedResult.postalCode);
+
+      const recentSearchList =
+        JSON.parse(localStorage.getItem("recentSearchList")) || [];
+
+      const updatedList = [
+        selectedResult,
+        ...recentSearchList.filter(
+          (recentSearch) => recentSearch.postalCode !== selectedResult.postalCode
+        )
+      ];
+
+      localStorage.setItem(
+        "recentSearchList",
+        JSON.stringify(updatedList)
+      );
+    }
+  }
   return (
     <SearchCardWrapper>
       <SearchBar
         keyword={searchKeyword}
         setKeyword={setSearchKeyword}
+        handleKeyDown={handleKeyDown}
       />
 
       <Line />
@@ -45,7 +96,11 @@ export default function SearchCard() {
       {searchKeyword === "" ? (
         <RecentSearchList />
       ) : (
-        <SearchResult keyword={searchKeyword} results={searchResult} />
+        <SearchResult
+          keyword={searchKeyword}
+          results={searchResult}
+          selectedIndex={selectedIndex}
+        />
       )}
     </SearchCardWrapper>
   );

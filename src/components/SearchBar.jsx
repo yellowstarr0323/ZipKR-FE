@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import searchIcon from "../asset/icon-search-512.png"
 
-export default function SearchBar({ keyword, setKeyword }) {
+export default function SearchBar({ keyword, setKeyword, handleKeyDown}) {
 
   return (
     <SearchBarWrapper>
@@ -9,7 +9,9 @@ export default function SearchBar({ keyword, setKeyword }) {
       <Input
         placeholder="도로명, 건물명, 지번 검색"
         value={keyword}
-        onChange={(e)=> {setKeyword(e.target.value)}} />
+        onChange={(e) => { setKeyword(e.target.value) }} 
+        onKeyDown={handleKeyDown}
+      />
     </SearchBarWrapper>
   )
 }

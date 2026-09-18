@@ -1,17 +1,13 @@
 import styled from "styled-components"
 import clockIcon from "../asset/icon-clock-512.png"
+import { copyToClipboard } from "../util/CopyPostalCode";
 
 export default function RecentSearchBox({address, postalCode}) {
 
-  const handleCopy = async (code) => {
-    await navigator.clipboard.writeText(code);
-    alert("성공적으로 복사되었습니다")
-  };
-
   return (
-    <RecentSearchBoxWrapper>
+    <RecentSearchBoxWrapper onClick={() => copyToClipboard(postalCode)}>
 
-      <RecentSearchAddressWrapper onClick={() => handleCopy(postalCode)}>
+      <RecentSearchAddressWrapper>
         <ClockIconWrapper>
           <ClockIcon src={clockIcon}/>
         </ClockIconWrapper>

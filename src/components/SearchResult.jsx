@@ -1,11 +1,8 @@
 import styled from "styled-components"
 import SearchBox from "./SearchBox"
 
-export default function SearchResult({ keyword, results }) {
+export default function SearchResult({ keyword, results, selectedIndex }) {
 
-  console.log(results)
-
-  
   return (
     results.length === 0 ?
       <ResultEmptyWrapper>
@@ -15,12 +12,13 @@ export default function SearchResult({ keyword, results }) {
         </ResultEmptyText>
       </ResultEmptyWrapper>
       :
-      results.map((data,index) => (
+      results.map((data, index) => (
         <SearchBox
           key={index}
           postalCode={data.postalCode}
           roadName={data.roadNameAddress}
           jibunName={data.jibunAddress}
+          selected={index === selectedIndex}
         />
       ))
   )
