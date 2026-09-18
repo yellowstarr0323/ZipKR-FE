@@ -3,10 +3,15 @@ import clockIcon from "../asset/icon-clock-512.png"
 
 export default function RecentSearchBox({address, postalCode}) {
 
+  const handleCopy = async (code) => {
+    await navigator.clipboard.writeText(code);
+    alert("성공적으로 복사되었습니다")
+  };
+
   return (
     <RecentSearchBoxWrapper>
 
-      <RecentSearchAddressWrapper>
+      <RecentSearchAddressWrapper onClick={() => handleCopy(postalCode)}>
         <ClockIconWrapper>
           <ClockIcon src={clockIcon}/>
         </ClockIconWrapper>
@@ -24,6 +29,7 @@ const RecentSearchBoxWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
   &:hover{
     background-color: #f8f8f8;
   }

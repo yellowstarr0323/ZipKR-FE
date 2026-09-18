@@ -1,11 +1,15 @@
 import styled from "styled-components"
 import searchIcon from "../asset/icon-search-512.png"
 
-export default function SearchBar() {
+export default function SearchBar({ keyword, setKeyword }) {
+
   return (
     <SearchBarWrapper>
-      <SearchIcon src={searchIcon}/>
-      <Input placeholder="도로명, 건물명, 지번 검색"/>
+      <SearchIcon src={searchIcon} />
+      <Input
+        placeholder="도로명, 건물명, 지번 검색"
+        value={keyword}
+        onChange={(e)=> {setKeyword(e.target.value)}} />
     </SearchBarWrapper>
   )
 }
