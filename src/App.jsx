@@ -21,6 +21,7 @@ const Page = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: stretch;
+  max-height: 100vh;
 `
 
 export default App
