@@ -59,7 +59,7 @@ export default function SearchCard() {
     }
 
     if (e.key === "Enter") {
-      if (selectedIndex === -1) {
+      if (selectedIndex === 0) {
         return;
       }
 
@@ -83,6 +83,7 @@ export default function SearchCard() {
       );
     }
   }
+  
   return (
     <SearchCardWrapper>
       <SearchBar
