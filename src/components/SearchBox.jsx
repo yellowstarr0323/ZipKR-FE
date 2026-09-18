@@ -27,7 +27,6 @@ const SearchBoxWrapper = styled.div`
   padding: 23.5px 20px;
   align-items: center;
   gap: 14px;
-  box-sizing: border-box;
 
   background-color: ${({ $selected }) =>
     $selected ? "#eeeeee" : "#ffffff"};
@@ -61,13 +60,11 @@ const Address = styled.div`
 `
 
 const AddressIcon = styled.span`
-  flex-shrink: 0;
 
   color: #222;
   font-size: 10px;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 0.2px;
 
   border: 1px solid #ddd;
   padding: 2px 4px;

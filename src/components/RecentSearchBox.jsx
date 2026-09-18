@@ -34,7 +34,6 @@ const RecentSearchBoxWrapper = styled.div`
 const ClockIcon = styled.img`
   width: 13px;
   height: 13px;
-  flex-shrink: 0;
   position: absolute;
   top: 50%;
   left: 50%;

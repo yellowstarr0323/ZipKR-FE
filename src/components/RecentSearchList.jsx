@@ -3,7 +3,7 @@ import RecentSearchBox from "./RecentSearchBox";
 
 export default function RecentSearchList() {
 
-const recentSearchList = JSON.parse(localStorage.getItem("recentSearchList")) || [];
+  const recentSearchList = JSON.parse(localStorage.getItem("recentSearchList")) || [];
 
   return (
     <RecentSearchListWrapper>
@@ -32,16 +32,12 @@ const recentSearchList = JSON.parse(localStorage.getItem("recentSearchList")) ||
 }
 
 const RecentSearchListWrapper = styled.div`
-  padding-left: 16px;
-  padding-top: 4px;
-  padding-bottom: 16px;
-  padding-right: 16px;
+  padding: 4px 16px 16px;
 `
 
 const RecentSearchText = styled.p`
   font-size: 11px;
-  padding-top:5px;
-  padding-bottom: 5px;
+  padding: 5px 0px;
 `
 
 const IntroduceText = styled.p`

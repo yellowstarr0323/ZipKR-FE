@@ -39,5 +39,5 @@ const ResultEmptyText = styled.p`
   font-size: 13.5px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20.93px;
+  line-height: 21px;
 `

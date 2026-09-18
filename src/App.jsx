@@ -17,10 +17,9 @@ function App() {
 
 const Page = styled.div`
   display: flex;
-  padding: 64px 16px 402.03px 16px;
+  padding: 64px 16px 402.03px;
   flex-direction: column;
   align-items: center;
-  align-self: stretch;
   max-height: 100vh;
 `
 
