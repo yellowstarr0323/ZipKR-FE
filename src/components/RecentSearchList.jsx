@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RecentSearchBox from "./RecentSearchBox";
 
 export default function RecentSearchList() {
