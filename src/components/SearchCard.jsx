@@ -10,8 +10,11 @@ export default function SearchCard() {
 
   const [searchKeyword, setSearchKeyword] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+
+  // 방향키를 주소를 선택하는 인덱스
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  // 검색어가 바뀔 때마다 우편번호 검색 api 호출
   useEffect(() => {
     if (searchKeyword.trim() === "") {
       setSearchResult([]);
@@ -37,6 +40,7 @@ export default function SearchCard() {
     getSearchResult();
   }, [searchKeyword]);
 
+  // 방향키(상하)를 통해 selectedIndex의 값을 수정한 뒤 엔터를 누르면 우편번호 복사
   function handleKeyDown(e) {
     if (e.key === "ArrowDown") {
       setSelectedIndex((prev) => {
@@ -83,7 +87,7 @@ export default function SearchCard() {
       );
     }
   }
-  
+
   return (
     <SearchCardWrapper>
       <SearchBar

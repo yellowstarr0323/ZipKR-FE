@@ -21,6 +21,7 @@ export default function SearchBox({ postalCode, roadName, jibunName, selected })
   )
 }
 
+// 방향키를 통해 지정된 주소의 인덱스값과 이 주소의 인덱스 값이 같다면 background-color 변경
 const SearchBoxWrapper = styled.div`
   display: flex;
   min-height: 92px;
