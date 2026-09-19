@@ -65,7 +65,7 @@ const RecentSearchAddressWrapper = styled.div`
 `
 
 const ClockIconWrapper = styled.div`
-  border-radius: 9999px;
+  border-radius: 50%;
   background: #F2F2F2;
   width: 28px;
   height: 28px;

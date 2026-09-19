@@ -24,7 +24,7 @@ const SearchBarWrapper = styled.div`
   margin: 15px;
   height: 45px;
   gap: 10px;
-  padding: 12px 15px
+  padding: 12px 15px;
 `
 
 const SearchIcon = styled.img`

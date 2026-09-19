@@ -63,9 +63,6 @@ export default function SearchCard() {
     }
 
     if (e.key === "Enter") {
-      if (selectedIndex === 0) {
-        return;
-      }
 
       const selectedResult = searchResult[selectedIndex];
 
@@ -87,6 +84,8 @@ export default function SearchCard() {
       );
     }
   }
+
+  console.log(selectedIndex)
 
   return (
     <SearchCardWrapper>

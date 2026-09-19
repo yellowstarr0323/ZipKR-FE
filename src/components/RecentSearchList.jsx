@@ -3,7 +3,7 @@ import RecentSearchBox from "./RecentSearchBox";
 
 export default function RecentSearchList() {
 
-  // local storage에 있는 최근 검색한 주소를 JSON 구조로 파싱
+  // localStorage에 있는 최근 검색한 주소를 JSON 구조로 파싱
   const recentSearchList = JSON.parse(localStorage.getItem("recentSearchList")) || [];
 
   return (
