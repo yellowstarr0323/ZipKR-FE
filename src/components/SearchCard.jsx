@@ -76,7 +76,7 @@ export default function SearchCard() {
         ...recentSearchList.filter(
           (recentSearch) => recentSearch.postalCode !== selectedResult.postalCode
         )
-      ];
+      ].slice(0,5);
 
       localStorage.setItem(
         "recentSearchList",
